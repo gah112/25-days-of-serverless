@@ -14,20 +14,20 @@ from azure.cosmos.cosmos_client import CosmosClient
 from azure.mgmt.resource import ResourceManagementClient
 from msrestazure.azure_active_directory import MSIAuthentication
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
+def main(req: func.HttpRequest) -> func.HttpResponse:    
     logging.info("Python HTTP trigger function processed a request.")
 
-    # Establish some static values and placeholders:
-    repositoryUrl = "https://github.com/gah112/25DaysOfServerless/master"
-    keyVaultUrl = "https://examplekeyvault.vault.azure.net/"
-    azureSubscriptionId = "166427d0-d7e5-4c8b-9ff5-1217190cb845"
-    azureStorageContainerName = "github-commit-images"
-    azureCosmosDatabaseName = "ServerlessExamples"
-    azureCosmosCollectionName = "collection01"
-    filePathPattern = "^.*\.png$"
-    authenticatedFlag = False
-
     try:
+        # Establish some static values and placeholders:
+        repositoryUrl = "https://github.com/gah112/25DaysOfServerless/master"
+        keyVaultUrl = "https://examplekeyvault.vault.azure.net/"
+        azureSubscriptionId = "166427d0-d7e5-4c8b-9ff5-1217190cb845"
+        azureStorageContainerName = "github-commit-images"
+        azureCosmosDatabaseName = "ServerlessExamples"
+        azureCosmosCollectionName = "collection01"
+        filePathPattern = "^.*\.png$"
+        authenticatedFlag = False
+        
         # Create a placeholder dictionary for the output object:
         databaseObject = {}
 
